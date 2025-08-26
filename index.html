@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Screencut - Pro Screenshot Editor</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .logo {
+            font-size: 3.5em;
+            font-weight: bold;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+        }
+        .subtitle {
+            color: #666;
+            font-size: 1.4em;
+            margin-bottom: 10px;
+        }
+        .tagline {
+            color: #888;
+            font-size: 1.1em;
+            font-style: italic;
+        }
+        .hero-section {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 30px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 15px;
+        }
+        .hero-section h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+        .hero-section p {
+            font-size: 1.2em;
+            color: #555;
+            margin-bottom: 30px;
+        }
+        .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        .feature-card {
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 15px;
+            text-align: center;
+            border-left: 4px solid #667eea;
+            transition: transform 0.2s;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        .feature-icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+        .feature-card h3 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .feature-card p {
+            color: #666;
+            font-size: 0.95em;
+        }
+        .links-section {
+            margin-bottom: 40px;
+        }
+        .links-section h2 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        .link-card {
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+        .link-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+        .link-card h3 {
+            margin-bottom: 8px;
+            font-size: 1.2em;
+        }
+        .link-card p {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+        .contact-section {
+            background: #e3f2fd;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .contact-section h3 {
+            color: #1976d2;
+            margin-bottom: 15px;
+        }
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #1976d2;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            color: #666;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+                margin: 10px;
+            }
+            .logo {
+                font-size: 2.5em;
+            }
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            .links-grid {
+                grid-template-columns: 1fr;
+            }
+            .contact-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">Screencut</div>
+            <div class="subtitle">Pro Screenshot Editor</div>
+            <div class="tagline">Transform ordinary screenshots into stunning visuals</div>
+        </div>
+
+        <div class="hero-section">
+            <h2>Create Beautiful Screenshots Instantly</h2>
+            <p>Screencut is the ultimate screenshot editor for iOS that transforms your ordinary screenshots into professional, eye-catching visuals with realistic device frames and stunning backgrounds.</p>
+            <a href="https://apps.apple.com/app/screencut" class="cta-button">Download on App Store</a>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">📱</div>
+                <h3>Smart Device Frames</h3>
+                <p>iPhone, iPad, and MacBook frames that look incredibly realistic and professional.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎨</div>
+                <h3>Beautiful Templates</h3>
+                <p>50+ stunning gradient and pattern backgrounds to make your screenshots stand out.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>Lightning Fast</h3>
+                <p>One-tap template application with instant preview and real-time editing.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📱</div>
+                <h3>Social Media Ready</h3>
+                <p>Optimized for Instagram, Twitter, TikTok, and all your favorite platforms.</p>
+            </div>
+        </div>
+
+        <div class="links-section">
+            <h2>Support & Legal</h2>
+            <div class="links-grid">
+                <a href="SupportLinks.html" class="link-card">
+                    <h3>📞 Support</h3>
+                    <p>Get help and contact information</p>
+                </a>
+                <a href="terms.html" class="link-card">
+                    <h3>⚖️ Terms of Service</h3>
+                    <p>App usage terms and conditions</p>
+                </a>
+                <a href="privacy.html" class="link-card">
+                    <h3>🔒 Privacy Policy</h3>
+                    <p>How we protect your data</p>
+                </a>
+                <a href="https://apps.apple.com/app/screencut" class="link-card">
+                    <h3>🏪 App Store</h3>
+                    <p>Download Screencut now</p>
+                </a>
+            </div>
+        </div>
+
+        <div class="contact-section">
+            <h3>📧 Contact Information</h3>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>📧</span>
+                    <a href="mailto:support@codewithik.com">support@codewithik.com</a>
+                </div>
+                <div class="contact-item">
+                    <span>🌐</span>
+                    <a href="https://codewithik.com">codewithik.com</a>
+                </div>
+                <div class="contact-item">
+                    <span>🐦</span>
+                    <a href="https://twitter.com/codewithik">@codewithik</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2024 CodeWithIK. All rights reserved.</p>
+            <p>Screencut - Create Beautiful Screenshots Instantly</p>
+        </div>
+    </div>
+</body>
+</html>
